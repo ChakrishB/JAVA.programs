@@ -1,0 +1,25 @@
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] nums = {14, 16, 87, 36, 25, 89, 34};
+        int m = 1;
+        int n = 3;
+        findMthMaxAndNthMin(nums, m, n);
+    }
+
+    public static void findMthMaxAndNthMin(int[] nums, int m, int n) {
+        Arrays.sort(nums);
+
+        int firstMax = nums[nums.length - m];
+        int thirdMin = nums[n - 1];
+
+        int sum = firstMax + thirdMin;
+        int difference = firstMax - thirdMin;
+
+        System.out.println("1st Maximum Number = " + firstMax);
+        System.out.println("3rd Minimum Number = " + thirdMin);
+        System.out.println("Sum = " + sum);
+        System.out.println("Difference = " + difference);
+    }
+}
